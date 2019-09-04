@@ -2,6 +2,7 @@
 layout: default
 ---
 
+<link rel="stylesheet" href="assets/css/custom.css"></link>
 <script src="assets/js/main.js"></script>
 <script>
     function OnSearch() {
@@ -9,7 +10,10 @@ layout: default
     }
 </script>
 
-<input id="input">
-<button onclick="OnSearch()">Search</button><br>
-<progress id="searching-progress" max="100" value="0" hidden></progress>
+<div id="input-area">
+    <input id="search-input">
+    <button id="search-button" onclick="OnSearch()">Search</button><br>
+    <progress id="searching-progress" max="100" value="0"></progress>
+</div>
+
 <ul id="search-result-list"></ul>

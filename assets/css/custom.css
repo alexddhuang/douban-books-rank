@@ -1,0 +1,14 @@
+input#search-input {
+    font-size: 20px;
+    width: 70%;
+    border-radius: 3px;
+}
+
+button#search-button {
+    font-size: 20px;
+    border-radius: 3px;
+}
+
+progress#searching-progress {
+    width: 100%;
+}

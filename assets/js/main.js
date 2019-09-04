@@ -10,6 +10,7 @@ function GetBooksRank(query) {
 
     var progress = document.getElementById("searching-progress");
     progress.hidden = false;
+    progress.value = `0`;
 
     var ul = document.getElementById("search-result-list");
     while (ul.firstChild) {
