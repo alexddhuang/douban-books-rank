@@ -1,19 +1,15 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <script src="assets/js/main.js"></script>
-        <script>
-            function OnSearch() {
-                GetBooksRank(document.getElementById("input").value);
-            }
-        </script>
-    </head>
-    <body>
-        <input id="input">
-        <button onclick="OnSearch()">Search</button><br>
-        <progress id="searching-progress" max="100" value="0" hidden></progress>
-        <ul id="search-result-list">
+---
+layout: default
+---
 
-        </ul>
-    </body>
-</html>
+<script src="assets/js/main.js"></script>
+<script>
+    function OnSearch() {
+        GetBooksRank(document.getElementById("input").value);
+    }
+</script>
+
+<input id="input">
+<button onclick="OnSearch()">Search</button><br>
+<progress id="searching-progress" max="100" value="0" hidden></progress>
+<ul id="search-result-list"></ul>
