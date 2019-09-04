@@ -6,14 +6,14 @@ layout: default
 <script src="assets/js/main.js"></script>
 <script>
     function OnSearch() {
-        GetBooksRank(document.getElementById("input").value);
+        GetBooksRank(document.getElementById("search-input").value);
     }
 </script>
 
 <div id="input-area">
     <input id="search-input">
     <button id="search-button" onclick="OnSearch()">Search</button><br>
-    <progress id="searching-progress" max="100" value="0"></progress>
+    <progress id="searching-progress" max="100" value="0" hidden></progress>
 </div>
 
 <ul id="search-result-list"></ul>
