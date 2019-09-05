@@ -34,6 +34,9 @@ function callback(page) {
     if (total > 1000) {
         total = 1000;
     }
+    if (total == 0) {
+        return;
+    }
 
     var progress = document.getElementById("searching-progress");
     progress.value = `${Math.ceil(start / total * 100)}`;
