@@ -25,6 +25,7 @@ function jsonp(url) {
     const script = document.createElement("script");
     script.type = "text/javascript";
     script.src = url + "&callback=callback";
+    script.async = true;
     document.body.append(script)
 }
 
@@ -32,6 +33,10 @@ function callback(page) {
     const count = page['count'];
     const start = page['start'];
     const total = page['total'];
+
+    if (total > 1024) {
+        total = 1024;
+    }
 
     console.log(`total books: ${total}; current index: ${start}`);
 
