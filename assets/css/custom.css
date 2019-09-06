@@ -1,11 +1,12 @@
 input#search-input {
     font-size: 20px;
-    width: 60%;
+    width: 73%;
     border-radius: 3px;
 }
 
 button#search-button {
-    font-size: 20px;
+    font-size: 21px;
+    width: 25%;
     border-radius: 3px;
 }
 
