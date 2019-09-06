@@ -3,6 +3,7 @@ const apikey = "0df993c66c0c636e29ecbb5344252a4a";
 let url;
 
 let books = [];
+let readbooks = 0;
 
 function GetBooksRank(query) {
     books = [];
@@ -17,7 +18,7 @@ function GetBooksRank(query) {
         ul.removeChild(ul.firstChild);
     }
 
-    jsonp(url);
+    jsonp(url)
 }
 
 function jsonp(url) {
@@ -30,33 +31,40 @@ function jsonp(url) {
 function callback(page) {
     const count = page['count'];
     const start = page['start'];
-    let total = page['total'];
-    if (total > 1000) {
-        total = 1000;
-    }
+    const total = page['total'];
+
+    console.log(`total books: ${total}; current index: ${start}`);
+
     if (total == 0) {
         return;
     }
 
-    var progress = document.getElementById("searching-progress");
-    progress.value = `${Math.ceil(start / total * 100)}`;
+    if (start == 0) {
+        readbooks = 0;
+
+        for (let s = start + count; s < total; s += count) {
+            jsonp(url + `&start=${s}`);
+        }
+    }
 
     page['books'].forEach(book => {
         if (parseFloat(book['rating']['average']) > 0) {
             books.push(book);
         }
     });
+
+    readbooks += count;
+
+    var progress = document.getElementById("searching-progress");
+    progress.value = `${Math.ceil(readbooks / total * 100)}`;
     
-    if (start + count >= total) {
+    if (readbooks >= total) {
         bayesian(books);
         books.sort((a, b) => {
             return b['rating']['bayesian'] - a['rating']['bayesian'];
         });
         showBooks();
-        return;
     }
-
-    jsonp(url + `&start=${start + count}`);
 }
 
 function bayesian(books) {
