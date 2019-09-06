@@ -32,7 +32,7 @@ function jsonp(url) {
 function callback(page) {
     const count = page['count'];
     const start = page['start'];
-    const total = page['total'];
+    let total = page['total'];
 
     if (total > 1024) {
         total = 1024;
