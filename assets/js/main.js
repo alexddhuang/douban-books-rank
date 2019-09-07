@@ -34,8 +34,8 @@ function callback(page) {
     const start = page['start'];
     let total = page['total'];
 
-    if (total > 1024) {
-        total = 1024;
+    if (total > 2048) {
+        total = 2048;
     }
 
     console.log(`total books: ${total}; current index: ${start}`);

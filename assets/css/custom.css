@@ -1,15 +1,15 @@
-input#search-input {
-    float: left;
-    width: 61.8%;
+#input-area > #search-input {
+    width: 100%;
+    height: 25px;
     font-size: 20px;
-    border-radius: 3px;
-    margin-right: 1%;
+    border-radius: 5px;
 }
 
-button#search-button {
-    float: left;
-    font-size: 21px;
-    border-radius: 3px;
+#input-area > #search-button {
+    margin-top: 3px;
+    height: 25px;
+    font-size: 20px;
+    border-radius: 5px;
 }
 
 progress#searching-progress {
