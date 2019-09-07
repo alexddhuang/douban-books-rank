@@ -1,12 +1,14 @@
 input#search-input {
+    float: left;
+    width: 61.8%;
     font-size: 20px;
-    width: 73%;
     border-radius: 3px;
+    margin-right: 1%;
 }
 
 button#search-button {
+    float: left;
     font-size: 21px;
-    width: 25%;
     border-radius: 3px;
 }
 
