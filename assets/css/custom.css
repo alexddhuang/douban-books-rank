@@ -1,13 +1,11 @@
 #input-area > #search-input {
-    width: 100%;
-    height: 25px;
+    display: inline;
     font-size: 20px;
     border-radius: 5px;
 }
 
 #input-area > #search-button {
-    margin-top: 3px;
-    height: 25px;
+    display: inline;
     font-size: 20px;
     border-radius: 5px;
 }
